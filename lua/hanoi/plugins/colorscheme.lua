@@ -1,7 +1,9 @@
 return {
-  "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000,
+  "rose-pine/neovim",
+	name = "rose-pine",
+  lazy = false,
+  priority = 1000,
   config = function()
-    -- Lua initialization file
-    vim.cmd [[colorscheme moonfly]]
-  end
+    vim.cmd("colorscheme rose-pine")
+  end,
 }
