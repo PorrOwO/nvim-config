@@ -34,4 +34,8 @@ map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
 
+-- Copilot 
+vim.keymap.set('i', '<C-J>', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false })
+vim.g.copilot_no_tab_map = true
+
 
