@@ -26,13 +26,18 @@ return
     cmd = {'LspInfo', 'LspInstall', 'LspStart'},
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      -- LspAttach is where you enable features that only work
-      -- if there is a language server active in the file
+      vim.diagnostic.config({
+        virtual_text = false
+      })
+
+      -- Show line diagnostics automatically in hover window
+      vim.o.updatetime = 250
+      vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
       vim.api.nvim_create_autocmd('LspAttach', {
         desc = 'LSP actions',
         callback = function(event)
           local opts = {buffer = event.buf}
-
           vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
           vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
           vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -46,5 +51,6 @@ return
         end 
       })
     end
+
   }
 }
