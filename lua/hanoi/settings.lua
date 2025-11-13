@@ -26,5 +26,5 @@ o.splitright = true
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+--vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
